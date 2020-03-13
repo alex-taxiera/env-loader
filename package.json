@@ -1,0 +1,12 @@
+{
+  "name": "env-loader",
+  "version": "0.0.0",
+  "description": "A custom environment loader built with docker secrets in mind.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alex Taxiera",
+  "license": "MIT"
+}
