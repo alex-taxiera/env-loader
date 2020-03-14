@@ -1,12 +1,60 @@
 {
-  "name": "env-loader",
+  "name": "docker-secret-env",
   "version": "0.0.0",
   "description": "A custom environment loader built with docker secrets in mind.",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx ava src/test/**/**/*.ts",
+    "build": "npx tsc",
+    "lint": "npx eslint src/**/*.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": [],
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-taxiera/env-loader.git"
+  },
+  "keywords": [
+    "docker",
+    "environment",
+    "env",
+    "dotenv"
+  ],
   "author": "Alex Taxiera",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-taxiera/env-loader/issues"
+  },
+  "homepage": "https://github.com/alex-taxiera/env-loader#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "@types/sinon": "^7.5.2",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "ava": "^3.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "sinon": "^9.0.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
 }
