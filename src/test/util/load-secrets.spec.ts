@@ -13,10 +13,10 @@ import {
 test('returns the secret file data', async (t) => {
   const x = loadSecrets(join(__dirname, '../resources/secrets'))
 
-  const expected = await fs.readFile(
+  const expected = (await fs.readFile(
     join(__dirname, '../resources/secrets/test'),
     'utf-8'
-  )
+  )).trim()
 
   t.is(x.test, expected)
   t.is(x.no, undefined)
