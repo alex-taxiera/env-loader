@@ -1,6 +1,6 @@
 {
   "name": "docker-secret-env",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A custom environment loader built with docker secrets in mind.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/alex-taxiera/env-loader#readme",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "devDependencies": {
     "@types/node": "^13.9.1",
